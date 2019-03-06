@@ -41,7 +41,6 @@ class WeeklyMenu extends React.Component {
     }
 
     render() {
-    console.log("render")
             return (
                 <div className="app">
                   <MenuForm submitFunction={this.fetchMenu}/>
@@ -65,8 +64,8 @@ class WeeklyMenu extends React.Component {
             )
     }
 
-      fetchMenu () {
-        fetch('https://weeku.herokuapp.com/api/menu')
+      fetchMenu (numberOfDays) {
+        fetch(`${process.env.REACT_APP_API_URL}/api/menu?numberOfDays=${numberOfDays}`)
           .then(response => response.json())
           .then(response => this.setState({historicalData: response}))
           .catch(e => e)
