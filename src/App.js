@@ -66,7 +66,7 @@ class WeeklyMenu extends React.Component {
     }
 
       fetchMenu () {
-        fetch('http://localhost:8080/api/menu')
+        fetch('https://weeku.herokuapp.com/api/menu')
           .then(response => response.json())
           .then(response => this.setState({historicalData: response}))
           .catch(e => e)
