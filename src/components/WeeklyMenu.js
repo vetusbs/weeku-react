@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {bindActionCreators} from 'redux'
 import MenuForm from './MenuForm'
 import DailyMenu from './DailyMenu'
-import { fetchWeeklyPlan } from '../actions'
 import {connect} from 'react-redux'
 import {store} from '../';
 import Button from '../containers/Button'
@@ -28,7 +27,7 @@ class WeeklyMenu extends React.Component {
     render() {
             return (
                 <div className="app">
-                  <MenuForm submitFunction={() => { this.props.handleClick(4) }}/>
+                  <MenuForm/>
                   <div className="container">
                           <div className="row">
                             <div className="col s12 board">
@@ -56,13 +55,9 @@ const mapStateToProps = (state) => ({
   stateObject: state
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  handleClick: () => { dispatch(fetchWeeklyPlan(4))}
-})
-
 WeeklyMenu = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(WeeklyMenu)
 
 

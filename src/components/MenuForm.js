@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { fetchWeeklyPlan } from '../actions'
+import {connect} from 'react-redux'
 
 class MenuForm extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class MenuForm extends Component {
   }
 
   handleSubmit(event) {
-    this.props.submitFunction(this.state.value);
+    this.props.handleClick(this.state.value)
     event.preventDefault();
   }
 
@@ -36,5 +38,19 @@ class MenuForm extends Component {
 MenuForm.propTypes = {
   submitFunction: PropTypes.func
 };
+
+const mapStateToProps = (state) => ({
+  weeklyPlan: state.weeklyPlan,
+  stateObject: state
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  handleClick: (numberOfDays) => { dispatch(fetchWeeklyPlan(numberOfDays))}
+})
+
+MenuForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MenuForm)
 
 export default MenuForm
