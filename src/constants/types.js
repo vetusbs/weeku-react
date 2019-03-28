@@ -1,0 +1,2 @@
+export const FETCH_WEEKLY_PLAN = 'FETCH_WEEKLY_PLAN';
+export const SHOW_WEEKLY_PLAN = 'SHOW_WEEKLY_PLAN';

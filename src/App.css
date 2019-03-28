@@ -1,0 +1,43 @@
+.selected { 
+  background-color: #F0F4C3;
+}
+
+.unselected { 
+  background-color: #CDDC39;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+}
+
+.title {
+	margin-top: 1.25em;
+	color: #eee;
+	text-align: center;
+	text-shadow: 1px 1px 0 black;
+}
+
+.grid-container-weekly {
+	display: grid;
+}
+
+.grid-container-daily-menu {
+    display: grid;
+  	grid-template-columns: auto;
+}
+
+.grid-container-meal {
+    display: grid;
+  	grid-template-columns: auto auto;
+}
+
+.item1 {
+  grid-column: 1 / 1;
+}
+
+.item2 {
+  grid-column: 2 / 2;
+}
