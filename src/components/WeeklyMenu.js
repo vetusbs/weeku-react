@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux'
-import MenuForm from './MenuForm'
+import MenuForm from '../containers/MenuForm'
 import DailyMenu from './DailyMenu'
 import {connect} from 'react-redux'
 import {store} from '../';
-import Button from '../containers/Button'
 
 class WeeklyMenu extends React.Component {
 
