@@ -17,8 +17,7 @@
     "start": "REACT_APP_API_URL=http://localhost:8080 react-scripts start",
     "build": "REACT_APP_API_URL=https://weeku.herokuapp.com react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "REACT_APP_API_URL=https://weeku.herokuapp.com react-scripts build"
+    "eject": "react-scripts eject"
   },
   "heroku-run-build-script": true,
   "eslintConfig": {
