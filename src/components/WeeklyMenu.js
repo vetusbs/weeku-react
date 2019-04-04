@@ -23,6 +23,10 @@ class WeeklyMenu extends React.Component {
        });
     }
 
+    handleClick (e) {
+      console.log(e);
+    }
+
     render() {
             return (
                 <div className="app">
@@ -30,13 +34,16 @@ class WeeklyMenu extends React.Component {
                   <div className="container">
                           <div className="row">
                             <div className="col s12 board">
-                              <div className="grid-container-weekly">
+                              <div className="grid-container-weekly"
+                                onDragOver={(e)=>this.onDragOver(e)}                    
+                                onDrop={(e)=>this.onDrop(e, "complete")}
+                              >
                                   { this.props.weeklyPlan.weeklyMenu ?
                                       this.props.weeklyPlan.weeklyMenu.dailyMenus.map(
                                       dailyMenu=>
                                       <DailyMenu 
                                         dailyMenu={dailyMenu} 
-                                        onClick={() => this.handleClick()}/>
+                                        onClick={(e) => this.handleClick(e)}/>
                                       )
                                     : null
                                   }

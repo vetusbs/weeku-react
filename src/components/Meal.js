@@ -15,7 +15,9 @@ class Meal extends React.Component {
        return (
             <div className={`grid-container-meal item${this.props.column}`}>
                 {this.props.meal.dishes.map(
-                    dish => <Dish onDrop={(e)=>{this.onDrop(e, "wip")}} dish={dish} onClick={this.props.onClick}/>
+                    dish => <Dish onDrop={(e)=>{this.onDrop(e, "wip")}} dish={dish} 
+                    onClick={(e) => this.props.onClick(e)}
+                    />
                 )}
             </div>
         )

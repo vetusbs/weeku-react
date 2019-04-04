@@ -20,9 +20,9 @@ class Dish extends React.Component {
 	    this.select = this.select.bind(this);
 	}
 
-	select() {
+	select(e) {
 		this.setState({selected: !this.state.selected});
-		this.props.onClick();
+		this.props.onClick(e);
 	}
 
     render() {
@@ -34,11 +34,10 @@ class Dish extends React.Component {
        return 	<div 
        			className={`item1 ${className}`} 
        			draggable 
-       			onClick={this.select}
+       			onClick={(e) => this.select(e)}
        			onDragStart = {(e) => this.onDragStart(e, this.props.dish.name)}
        			>
-       				{this.props.dish.name},
-       				{this.props.dish.minutesOfPreparation}
+       				{this.props.dish.name}
        			</div>
     }
 }

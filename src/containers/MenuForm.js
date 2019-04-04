@@ -22,7 +22,7 @@ class MenuForm extends Component {
   }
 
   render() {
-  console.log("menu render");
+  console.log("menu render " + process.env.NODE_ENV);
     return (
       <form onSubmit={this.handleSubmit}>
         <label>

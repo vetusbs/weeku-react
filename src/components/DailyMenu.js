@@ -10,7 +10,9 @@ class DailyMenu extends React.Component {
                 {this.props.dailyMenu.meals.map(
                     function(meal, count) {
                     	console.log(this);
-                    	return <Meal meal={meal} column={(count % 2) + 1} onClick={this.props.onClick}/>
+                    	return <Meal meal={meal} column={(count % 2) + 1} 
+                    				onClick={(e) => this.props.onClick(e)}
+                    			/>
                 	}
                 , this)}
             </div>
